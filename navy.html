@@ -1,0 +1,123 @@
+<html>
+<head>
+<title>Navy - V 0.3</title>
+<meta name="robots" content="noindex, nofollow">
+<script language="javascript">
+<!--
+
+/* N A V Y - Ver 0.3
+
+	Ce script à été écrit par Balou67.
+Veuillez respecter le temps qui à été passé à le réaliser et à le taper à la main.
+Si vous avez des questions ou si vous voulez l'utiliser sur votre site: balou67@yahoo.com
+Merci!
+
+	This script has been written by Balou67.
+Please respect the time spent for building and handtyping.
+If you have any question or if you want to use it on your site: balou67@yahoo.com
+Thanks! */
+
+
+score=0;
+C1=1;
+C2=1;
+function affichegrille() {
+document.write("<td><a href='javascript:choix("+C1+")'><img src='navy0.gif' width=20 height=20 border=0></a></td>");
+if ((C2==10)&&(C1<100)) {
+document.write("</tr><tr>");
+C2=0;
+}
+if (C1<100) {
+C1++;
+C2++;
+affichegrille();
+}
+}
+function resetgrille() {
+document.images[C1].src="navy0.gif";
+if (C1<100) {
+C1++;
+resetgrille();
+}
+}
+function depart(){
+Ncase=new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+Bato1=Math.ceil(100*Math.random());
+Bato2=Math.ceil(100*Math.random());
+if (Bato1==Bato2) {
+depart();
+}
+Bato3=Math.ceil(100*Math.random());
+if ((Bato1==Bato3)||(Bato2==Bato3)) {
+depart();
+}
+Bato4=Math.ceil(100*Math.random());
+if ((Bato1==Bato4)||(Bato2==Bato4)||(Bato3==Bato4)) {
+depart();
+}
+Bato5=Math.ceil(100*Math.random());
+if ((Bato1==Bato5)||(Bato2==Bato5)||(Bato3==Bato5)||(Bato4==Bato5)) {
+depart();
+}
+Dead=Math.ceil(100*Math.random());
+if ((Dead==Bato1)||(Dead==Bato2)||(Dead==Bato3)||(Dead==Bato4)||(Dead==Bato5)) {
+depart();
+}
+C1=1;
+C2=0;
+resetgrille();
+}
+function choix(numero) {
+if (Ncase[numero]!=0) {
+alert('Vous avez déjà cliqué ici!');
+}else{
+if ((numero==Bato1)||(numero==Bato2)||(numero==Bato3)||(numero==Bato4)||(numero==Bato5)) {
+document.images[numero].src="navy2.gif";
+Ncase[numero]=2;
+C2++;
+score=score+25;
+}
+if (numero==Dead) {
+document.images[numero].src="navy3.gif";
+Ncase[numero]=3;
+score=score-50;
+}
+if ((numero!=Bato1)&&(numero!=Bato2)&&(numero!=Bato3)&&(numero!=Bato4)&&(numero!=Bato5)&&(numero!=Dead)) {
+document.images[numero].src="navy1.gif";
+Ncase[numero]=1;
+score--;
+}
+}
+document.forms[0].score.value="> "+score+" <";
+if (C2==5) {
+alert('Vous avez gagné!');
+depart();
+}
+if (score<=(-100)) {
+alert('Vous avez atteint -100! Vous avez perdu!');
+score=0;
+depart();
+}
+document.forms[0].score.value="> "+score+" <";
+}
+// -->
+</script>
+</head>
+<body bgcolor="#ffffff" background="bg.gif" text="#0000ff" link="#ff0000" alink="#ff0000" vlink="#ff0000">
+
+<table border=0 width=100%><tr><th rowspan=2><img src="navy.gif" width=203 height=43 alt="Navy V 0.3"><p>
+<table border=0 cellspacing=0 cellpadding=0><tr>
+<script language="javascript">
+<!--
+affichegrille();
+depart();
+// -->
+</script>
+</tr></table>
+<form>
+<input type="button" name="score" value=" > 0 < ">
+</form>
+</th><td><table border=0 width=300><tr><td><p align=justify>5 bateaux ont &eacute;t&eacute; cach&eacute;s dans cette grille, &agrave; vous de les retrouver en cliquant sur les points d'int&eacute;rogation. En fonction du bar&ecirc;me ci-dessous, si vous arrivez &agrave; -100, vous avez perdu. Si vous trouvez les 5 bateaux avant d'arriver &agrave; -100, alors la partie recommence (mais vous conservez vos points).</td></tr></table></td></tr>
+<tr><td><b><img src="navy1.gif" width=20 height=20> -1 &nbsp; <img src="navy2.gif" width=20 height=20> +25 &nbsp; <img src="navy3.gif" width=20 height=20> -50</b></td></tr></table>
+<a href="http://www.balou67.fr.st/"><img src="../b67ds.gif" width=80 height=30 alt="Balou67 Diffusion" border=0></a>
+</html>
