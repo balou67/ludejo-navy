@@ -1,21 +1,10 @@
 <html>
 <head>
 <title>Navy - V 0.3</title>
-<meta name="robots" content="noindex, nofollow">
-<script language="javascript">
+<script type="text/javascript">
 <!--
 
-/* N A V Y - Ver 0.3
-
-	Ce script ‡ ÈtÈ Ècrit par Balou67.
-Veuillez respecter le temps qui ‡ ÈtÈ passÈ ‡ le rÈaliser et ‡ le taper ‡ la main.
-Si vous avez des questions ou si vous voulez l'utiliser sur votre site: balou67@yahoo.com
-Merci!
-
-	This script has been written by Balou67.
-Please respect the time spent for building and handtyping.
-If you have any question or if you want to use it on your site: balou67@yahoo.com
-Thanks! */
+/* N A V Y - Ver 0.3 */
 
 
 score=0;
@@ -69,7 +58,7 @@ resetgrille();
 }
 function choix(numero) {
 if (Ncase[numero]!=0) {
-alert('Vous avez dÈj‡ cliquÈ ici!');
+alert('Vi jam alklakis ƒâi-tien!');
 }else{
 if ((numero==Bato1)||(numero==Bato2)||(numero==Bato3)||(numero==Bato4)||(numero==Bato5)) {
 document.images[numero].src="navy2.gif";
@@ -90,11 +79,11 @@ score--;
 }
 document.forms[0].score.value="> "+score+" <";
 if (C2==5) {
-alert('Vous avez gagnÈ!');
+alert('Vi gajnis!');
 depart();
 }
 if (score<=(-100)) {
-alert('Vous avez atteint -100! Vous avez perdu!');
+alert('Vi atingis -100! Vi malgajnis!');
 score=0;
 depart();
 }
@@ -117,7 +106,6 @@ depart();
 <form>
 <input type="button" name="score" value=" > 0 < ">
 </form>
-</th><td><table border=0 width=300><tr><td><p align=justify>5 bateaux ont &eacute;t&eacute; cach&eacute;s dans cette grille, &agrave; vous de les retrouver en cliquant sur les points d'int&eacute;rogation. En fonction du bar&ecirc;me ci-dessous, si vous arrivez &agrave; -100, vous avez perdu. Si vous trouvez les 5 bateaux avant d'arriver &agrave; -100, alors la partie recommence (mais vous conservez vos points).</td></tr></table></td></tr>
+</th><td><table border=0 width=300><tr><td><p align=justify>5 ≈ùipoj ka≈ùas sin en tiu tabulo, vi retrovu ilin alklakante la demandosignojn. Atingante -100 poentojn, vi malgajnas. Se vi trovas la 5 ≈ùipojn anta≈≠ ol atingi -100, la ludo rekomenciƒùas (sed vi konservas viajn poentojn).</td></tr></table></td></tr>
 <tr><td><b><img src="navy1.gif" width=20 height=20> -1 &nbsp; <img src="navy2.gif" width=20 height=20> +25 &nbsp; <img src="navy3.gif" width=20 height=20> -50</b></td></tr></table>
-<a href="http://www.balou67.fr.st/"><img src="../b67ds.gif" width=80 height=30 alt="Balou67 Diffusion" border=0></a>
 </html>
